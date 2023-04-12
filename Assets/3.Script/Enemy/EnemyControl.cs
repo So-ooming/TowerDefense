@@ -50,7 +50,12 @@ public class EnemyControl : MonoBehaviour
     {
         if(currentIndex < wayPointCount - 1)
         {
-            if(currentIndex > 5 && currentIndex < 8)
+            
+            // 적의 위치를 정확하게 목표 위치로 설정
+            transform.position = wayPoints[currentIndex].position;
+            // 이동 방향 설정 -> 다음 목표 지점(wayPoints)
+            currentIndex++;
+            if (currentIndex >= 6 && currentIndex < 8)
             {
                 animator.SetBool("isRight", true);
             }
@@ -58,10 +63,6 @@ public class EnemyControl : MonoBehaviour
             {
                 animator.SetBool("isRight", false);
             }
-            // 적의 위치를 정확하게 목표 위치로 설정
-            transform.position = wayPoints[currentIndex].position;
-            // 이동 방향 설정 -> 다음 목표 지점(wayPoints)
-            currentIndex++;
             Vector3 direction = (wayPoints[currentIndex].position - transform.position).normalized;
             movement2D.MoveTo(direction);
         }
