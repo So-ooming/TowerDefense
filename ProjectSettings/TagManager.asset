@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Wall
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 535013041
+    locked: 0
+  - name: Enemy
+    uniqueID: 1281795897
+    locked: 0
+  - name: Wall
+    uniqueID: 1764177527
+    locked: 0
+  - name: Playground
+    uniqueID: 999090107
     locked: 0
