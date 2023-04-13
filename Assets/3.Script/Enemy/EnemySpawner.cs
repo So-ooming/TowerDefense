@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemy()
     {
-        while (true)
+        for(int i = 0; i < 10; i++)
         {
             GameObject clone = Instantiate(enemyPrefab);
             EnemyControl enemy = clone.GetComponent<EnemyControl>();
@@ -24,11 +24,5 @@ public class EnemySpawner : MonoBehaviour
 
             yield return new WaitForSeconds(spawnTime);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -23,9 +23,6 @@ public class CameraControl : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             clickPoint = Input.mousePosition;
-            height = Camera.main.orthographicSize;
-            width = height * Screen.width / Screen.height;
-            Debug.Log(width + ", " + height);
         }
         if (Input.GetMouseButton(0))
         {
