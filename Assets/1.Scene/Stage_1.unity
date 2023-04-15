@@ -1191,6 +1191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2dc484545d6e964ea30cdb9cf8098d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stagedata: {fileID: 11400000, guid: 226fc533f869948419627ecabb722551, type: 2}
   enemyPrefab: {fileID: 5516328939376577945, guid: f68eb4038d2d7d94bbc0eff831527ec6, type: 3}
   spawnTime: 2.5
   wayPoints:
@@ -1204,6 +1205,7 @@ MonoBehaviour:
   - {fileID: 1666969961}
   - {fileID: 18281697}
   - {fileID: 180648840}
+  Enemys: []
 --- !u!4 &335492240
 Transform:
   m_ObjectHideFlags: 0

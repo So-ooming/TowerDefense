@@ -8,26 +8,30 @@ public class EnemyControl : MonoBehaviour
     private Transform[] wayPoints;      // 이동 경로 정보
     private int currentIndex = 0;       // 현재 지점 목표 인덱스
     private Movement2D movement2D;      // 오브젝트 이동 제어
+    private EnemySpawner enemySpawner;
+
+    [SerializeField] private Vector3 poolPosition;
     [SerializeField] Animator animator;
 
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
-
-    public void Setup(Transform[] wayPoints)
+    public void Setup(EnemySpawner enemySpawner, Transform[] wayPoints)
     {
         movement2D = GetComponent<Movement2D>();
+        this.enemySpawner = enemySpawner;
 
         // 적 이동 경로 WayPoints 정보 설정
         wayPointCount = wayPoints.Length;
         this.wayPoints = new Transform[wayPointCount];
         this.wayPoints = wayPoints;
 
-        // 적의 위치를 첫 번째 wayPoint 위치로 설정
         transform.position = wayPoints[currentIndex].position;
 
         StartCoroutine("OnMove");
+    }
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        poolPosition = transform.position;
     }
 
     private IEnumerator OnMove()
@@ -72,5 +76,10 @@ public class EnemyControl : MonoBehaviour
             // 현재 위치가 마지막 wayPoints라면
             Destroy(gameObject);
         }
+    }
+    public void OnDie()
+    {
+        gameObject.transform.position = poolPosition + Vector3.one;
+        gameObject.SetActive(false);
     }
 }

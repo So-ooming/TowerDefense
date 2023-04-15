@@ -5,29 +5,46 @@ using UnityEngine;
 public class BulletControl : MonoBehaviour
 {
     [SerializeField] private Stage_Data stage_Data;
-    private float destoryWeight = 2.0f;
-    public GameObject target;
-    private Rigidbody2D rb;
-    public float speed = 5f;
-    public float rotateSpeed = 200f;
+    Movement2D movement2D;
+    private float destoryWeight = 1.0f;
+    public Transform target;
+    Vector2 speed = Vector2.zero;
+
+    public void Setup(Transform target)
+    {
+        movement2D = GetComponent<Movement2D>();
+        this.target = target;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (!col.CompareTag("Enemy")) return;
+        if (col.transform != target) return;
+        col.GetComponent<EnemyControl>().OnDie();
+        Destroy(gameObject);
+    }
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Enemy");
+        //target = GameObject.FindGameObjectWithTag("Enemy");
+        movement2D = GetComponent<Movement2D>();
     }
 
     private void FixedUpdate()
     {
-        Vector2 direction = (Vector2)target.transform.position - rb.position;
-        direction.Normalize();
+        /*Vector2 direction = (Vector2)target.transform.position;
+        transform.position = Vector2.SmoothDamp(transform.position, direction, ref speed, 0.5f);*/
+        if (target != null)
+        {
+            Vector3 direction = (target.position - transform.position).normalized;
+            movement2D.MoveTo(direction);
+        }
+        //              
+        else
+        {
+            Destroy(gameObject);
+        }
 
-        float rotateAmount = Vector3.Cross(direction, transform.up).z;
-        rb.angularVelocity = -rotateAmount * rotateSpeed;
-
-        rb.velocity = target.transform.up * speed;
-        Debug.Log(target.transform.up);
-        Debug.Log(rb.velocity);
     }
 
     private void LateUpdate()
