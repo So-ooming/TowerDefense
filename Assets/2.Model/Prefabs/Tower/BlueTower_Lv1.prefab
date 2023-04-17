@@ -10,9 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5309480628069903529}
   - component: {fileID: 5309480628069903528}
-  - component: {fileID: 5309480628069903535}
-  - component: {fileID: 3700855633380587770}
-  - component: {fileID: 1988702297709204061}
+  - component: {fileID: 4028982714276797390}
   m_Layer: 0
   m_Name: BlueTower_Lv1
   m_TagString: Player
@@ -29,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5309480628069903534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.95, y: 4.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,23 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5309480628069903535
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5309480628069903534}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 4.5
---- !u!114 &3700855633380587770
+--- !u!114 &4028982714276797390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,18 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6afccc993053a4f87890e75211b568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player_bullet: {fileID: 4719298526951072030, guid: 6511af49740e41f40a12bf0569ea7308, type: 3}
-  Attack_Rate: 1
---- !u!114 &1988702297709204061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5309480628069903534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaff2bb61b8f374409158fa4e7d0d590, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitingTime: 3
+  bulletPrefab: {fileID: 4719298526951072030, guid: 6511af49740e41f40a12bf0569ea7308, type: 3}
+  attackRate: 0.5
+  attackRange: 4
+  spawnPoint: {fileID: 5309480628069903529}

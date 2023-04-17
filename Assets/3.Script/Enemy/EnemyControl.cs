@@ -10,7 +10,6 @@ public class EnemyControl : MonoBehaviour
     private Movement2D movement2D;      // 오브젝트 이동 제어
     private EnemySpawner enemySpawner;
 
-    [SerializeField] private Vector3 poolPosition;
     [SerializeField] Animator animator;
 
     public void Setup(EnemySpawner enemySpawner, Transform[] wayPoints)
@@ -31,7 +30,6 @@ public class EnemyControl : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        poolPosition = transform.position;
     }
 
     private IEnumerator OnMove()
@@ -79,7 +77,6 @@ public class EnemyControl : MonoBehaviour
     }
     public void OnDie()
     {
-        gameObject.transform.position = poolPosition + Vector3.one;
-        gameObject.SetActive(false);
+        enemySpawner.DestroyEnemy(this);
     }
 }

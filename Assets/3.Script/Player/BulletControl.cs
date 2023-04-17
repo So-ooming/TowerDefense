@@ -4,30 +4,23 @@ using UnityEngine;
 
 public class BulletControl : MonoBehaviour
 {
-    [SerializeField] private Stage_Data stage_Data;
     Movement2D movement2D;
-    private float destoryWeight = 1.0f;
     public Transform target;
-    Vector2 speed = Vector2.zero;
+    private float damage;
 
-    public void Setup(Transform target)
+    public void Setup(Transform target, float damage)
     {
         movement2D = GetComponent<Movement2D>();
         this.target = target;
+        this.damage = damage;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (!col.CompareTag("Enemy")) return;
         if (col.transform != target) return;
-        col.GetComponent<EnemyControl>().OnDie();
+        col.GetComponent<EnemyInfo>().TakeDamage(damage);
         Destroy(gameObject);
-    }
-
-    private void Awake()
-    {
-        //target = GameObject.FindGameObjectWithTag("Enemy");
-        movement2D = GetComponent<Movement2D>();
     }
 
     private void FixedUpdate()
@@ -45,16 +38,5 @@ public class BulletControl : MonoBehaviour
             Destroy(gameObject);
         }
 
-    }
-
-    private void LateUpdate()
-    {
-        if (transform.position.y < stage_Data.LimitMin.y - destoryWeight ||
-            transform.position.y > stage_Data.LimitMax.y + destoryWeight ||
-            transform.position.x < stage_Data.LimitMin.x - destoryWeight ||
-            transform.position.x > stage_Data.LimitMax.x + destoryWeight)
-        {
-            Destroy(gameObject);
-        }
     }
 }

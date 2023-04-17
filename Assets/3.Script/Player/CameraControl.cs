@@ -20,11 +20,11 @@ public class CameraControl : MonoBehaviour
         {
             isAlt = false;
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             clickPoint = Input.mousePosition;
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             if (isAlt)
             {

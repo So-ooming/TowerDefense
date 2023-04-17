@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5822152393657225815}
   - component: {fileID: 1643811099774237406}
   - component: {fileID: -571780141701993466}
-  - component: {fileID: 7758444981678949732}
+  - component: {fileID: 9221336689423468141}
+  - component: {fileID: 835679836116555577}
   m_Layer: 0
   m_Name: Bullet (1)
   m_TagString: Untagged
@@ -93,7 +94,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4719298526951072030}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -122,7 +123,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &7758444981678949732
+--- !u!114 &9221336689423468141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4719298526951072030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221ce092c5be64408da6fd1010fe32a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  moveDirection: {x: 0, y: 0, z: 0}
+--- !u!114 &835679836116555577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +149,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1f7ebbf391cbc48aeb66ff208ae6d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage_Data: {fileID: 11400000, guid: 226fc533f869948419627ecabb722551, type: 2}
-  target: {fileID: 5516328939376577945, guid: f68eb4038d2d7d94bbc0eff831527ec6, type: 3}
-  speed: 5
-  rotateSpeed: 200
+  target: {fileID: 0}
