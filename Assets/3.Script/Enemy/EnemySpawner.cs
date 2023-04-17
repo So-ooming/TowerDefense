@@ -7,8 +7,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private GameObject enemyHPPrefab;
     [SerializeField] private float spawnTime;
+    [SerializeField] private PlayerHP playerHP;
     [SerializeField] private Transform CanvasTransfrom;
     [SerializeField] private Transform[] wayPoints;
+    [SerializeField] private PlayerGold playerGold;
 
     private List<EnemyControl> enemyList;
     public List<EnemyControl> EnemyList => enemyList;
@@ -36,9 +38,22 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void DestroyEnemy(EnemyControl enemy)
+    public void DestroyEnemy(EnemyDestroyType type, EnemyControl enemy, int gold)
     {
+        // Enemy가 목표 지점에 골인했을 때
+        if(type == EnemyDestroyType.Arrive)
+        {
+            playerHP.TakeDamage(1);
+        }
+
+        else if(type == EnemyDestroyType.Kill)
+        {
+            playerGold.CurrentGold += gold;
+        }
+
+        // 리스트에서 사망한 enemy 정보 삭제
         enemyList.Remove(enemy);
+
         Destroy(enemy.gameObject);
     }
 
