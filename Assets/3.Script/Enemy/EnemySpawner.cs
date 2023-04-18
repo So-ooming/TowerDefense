@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
+    //[SerializeField] private GameObject enemyPrefab;
     [SerializeField] private GameObject enemyHPPrefab;
-    [SerializeField] private float spawnTime;
+    //[SerializeField] private float spawnTime;
     [SerializeField] private PlayerHP playerHP;
     [SerializeField] private Transform CanvasTransfrom;
     [SerializeField] private Transform[] wayPoints;
     [SerializeField] private PlayerGold playerGold;
+    private Wave currentWave;
 
     private List<EnemyControl> enemyList;
     public List<EnemyControl> EnemyList => enemyList;
@@ -18,23 +19,34 @@ public class EnemySpawner : MonoBehaviour
     void Awake()
     {
         enemyList = new List<EnemyControl>();
+        //StartCoroutine("SpawnEnemy");
+    }
+
+    public void StartWave(Wave wave)
+    {
+        currentWave = wave;
         StartCoroutine("SpawnEnemy");
     }
 
     private IEnumerator SpawnEnemy()
     {
-        while (true)
+        int spawnEnemyCount = 0;
+        //while (true)
+        while (spawnEnemyCount < currentWave.maxEnemyCount)
         {
-            GameObject clone = Instantiate(enemyPrefab);
+            // GameObject clone = Instantiate(enemyPrefab);
+            int enemyIndex = Random.Range(0, currentWave.enemyPrefabs.Length);
+            GameObject clone = Instantiate(currentWave.enemyPrefabs[enemyIndex]);
             EnemyControl enemy = clone.GetComponent<EnemyControl>();
 
             enemy.Setup(this, wayPoints);
             enemyList.Add(enemy);
 
             SpawnEnemyHP(clone);
+            spawnEnemyCount++;
 
-            yield return new WaitForSeconds(spawnTime);
-
+            yield return new WaitForSeconds(currentWave.spawnTime);
+ 
         }
     }
 

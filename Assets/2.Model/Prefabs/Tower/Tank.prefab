@@ -131,6 +131,7 @@ MonoBehaviour:
   attackRate: 0.5
   attackRange: 4
   spawnPoint: {fileID: 4287612615907689291}
+  attackDamage: 1
   head: {fileID: 9217886689124037265}
 --- !u!1 &5958319679684850571
 GameObject:

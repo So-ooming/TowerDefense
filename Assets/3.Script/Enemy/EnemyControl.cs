@@ -11,7 +11,7 @@ public class EnemyControl : MonoBehaviour
     private int currentIndex = 0;       // 현재 지점 목표 인덱스
     private Movement2D movement2D;      // 오브젝트 이동 제어
     private EnemySpawner enemySpawner;
-    private int gold = 10;
+    [SerializeField] private int gold = 10;
 
     [SerializeField] Animator animator;
 

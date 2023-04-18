@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -2271575637343815091}
   - component: {fileID: 639111056517919665}
   m_Layer: 0
-  m_Name: AngryPig
+  m_Name: Chameleon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: 999090107
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3474578761864754926, guid: 6991e54fe8bb5724bafb4aba16583d49, type: 3}
+  m_Sprite: {fileID: 1022226135674028260, guid: 5c876d5b9f3c75b409e35030dd07bc57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,7 @@ Animator:
   m_GameObject: {fileID: 5516328939376577945}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 16ff4076c3f5e8140b3be0038b47d964, type: 2}
+  m_Controller: {fileID: 9100000, guid: 23d5112322a9b1a418c5e8fdab06db5f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be652bffb2c86164eb2de4cc269ba5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 10
+  gold: 15
   animator: {fileID: 0}
 --- !u!114 &-6754868531188199260
 MonoBehaviour:
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d221ce092c5be64408da6fd1010fe32a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 3.6
   moveDirection: {x: -1, y: 0, z: 0}
 --- !u!58 &-6535650977637749625
 CircleCollider2D:
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db86982d85c8e1742bd98bf8aed2f95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 20
+  MaxHP: 25
 --- !u!114 &639111056517919665
 MonoBehaviour:
   m_ObjectHideFlags: 0

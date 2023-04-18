@@ -1,31 +1,37 @@
 fileFormatVersion: 2
-guid: 5c876d5b9f3c75b409e35030dd07bc57
+guid: f6e8c69752a043a499af93d9e4fa1f78
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1022226135674028260
-    second: Run (84x38)_0
+      213: 7663528027420790050
+    second: LeftRun (44x30)_0
   - first:
-      213: -2963336239593421820
-    second: Run (84x38)_1
+      213: -8938700082101302278
+    second: LeftRun (44x30)_1
   - first:
-      213: -8012655774611150090
-    second: Run (84x38)_2
+      213: 3906856246643548536
+    second: LeftRun (44x30)_2
   - first:
-      213: -9011061084279617464
-    second: Run (84x38)_3
+      213: -3806884771271387113
+    second: LeftRun (44x30)_3
   - first:
-      213: -6102509222421737531
-    second: Run (84x38)_4
+      213: 6758908079702560418
+    second: LeftRun (44x30)_4
   - first:
-      213: -6529813969545497391
-    second: Run (84x38)_5
+      213: -233819102456082549
+    second: LeftRun (44x30)_5
   - first:
-      213: 1818447757260010122
-    second: Run (84x38)_6
+      213: -8244105777721262420
+    second: LeftRun (44x30)_6
   - first:
-      213: 5637722431008129940
-    second: Run (84x38)_7
+      213: 5763719516956574868
+    second: LeftRun (44x30)_7
+  - first:
+      213: 5400275413678197612
+    second: LeftRun (44x30)_8
+  - first:
+      213: 1466565043383696038
+    second: LeftRun (44x30)_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,7 +62,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -85,14 +91,14 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,7 +110,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,169 +145,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run (84x38)_0
+      name: LeftRun (44x30)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 44
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d8aa843225a5a60800000000000000
+      internalID: 7663528027420790050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftRun (44x30)_1
       rect:
         serializedVersion: 2
         x: 44
         y: 0
-        width: 37
-        height: 38
+        width: 44
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 37, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86805aefff6908e469c8c5ab03de6a21
-      internalID: 1022226135674028260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run (84x38)_1
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 0
-        width: 43
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb32d35b76d9cda46a3b039e4c5336e5
-      internalID: -2963336239593421820
+      spriteID: afbc89472ab53f380800000000000000
+      internalID: -8938700082101302278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (84x38)_2
+      name: LeftRun (44x30)_2
       rect:
         serializedVersion: 2
-        x: 208
+        x: 88
         y: 0
         width: 44
-        height: 38
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e046f29a8874ce498afd748e8db5f17
-      internalID: -8012655774611150090
+      spriteID: 87164b19e01f73630800000000000000
+      internalID: 3906856246643548536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (84x38)_3
+      name: LeftRun (44x30)_3
       rect:
         serializedVersion: 2
-        x: 291
-        y: 0
-        width: 45
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb587ba35b79deb41aa30971d4fe0643
-      internalID: -9011061084279617464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run (84x38)_4
-      rect:
-        serializedVersion: 2
-        x: 375
+        x: 132
         y: 0
         width: 44
-        height: 38
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8671ce7d32e40b64ca21f00d48bfceb6
-      internalID: -6102509222421737531
+      spriteID: 7185683687a3b2bc0800000000000000
+      internalID: -3806884771271387113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (84x38)_5
+      name: LeftRun (44x30)_4
       rect:
         serializedVersion: 2
-        x: 459
+        x: 176
         y: 0
-        width: 45
-        height: 38
+        width: 44
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 000d62f3c44e6234e91bf1ecbe22aa88
-      internalID: -6529813969545497391
+      spriteID: 2ae403896177ccd50800000000000000
+      internalID: 6758908079702560418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (84x38)_6
+      name: LeftRun (44x30)_5
       rect:
         serializedVersion: 2
-        x: 545
+        x: 220
         y: 0
-        width: 43
-        height: 38
+        width: 44
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a812e6d3924e3f4e8c8320e6d7a95d1
-      internalID: 1818447757260010122
+      spriteID: b8f8760e3ce41ccf0800000000000000
+      internalID: -233819102456082549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (84x38)_7
+      name: LeftRun (44x30)_6
       rect:
         serializedVersion: 2
-        x: 630
+        x: 264
         y: 0
-        width: 41
-        height: 38
+        width: 44
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb55e294e9cf2a746b0d4e543922d27c
-      internalID: 5637722431008129940
+      spriteID: caebd2c697d079d80800000000000000
+      internalID: -8244105777721262420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftRun (44x30)_7
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 0
+        width: 44
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494ce29fc58dcff40800000000000000
+      internalID: 5763719516956574868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftRun (44x30)_8
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 44
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b809970e1a1fa40800000000000000
+      internalID: 5400275413678197612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftRun (44x30)_9
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 0
+        width: 44
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aaf3e203294a5410800000000000000
+      internalID: 1466565043383696038
       vertices: []
       indices: 
       edges: []

@@ -1,39 +1,33 @@
 fileFormatVersion: 2
-guid: d4f2f936f814df24fb7559370c465cdc
+guid: b166208e3317f3740a40a3d81b854c4d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4740742658319907719
-    second: Idle (44x30)_0
+      213: 7468268985705360469
+    second: RightRun (84x38)_0
   - first:
-      213: -1280504103846584438
-    second: Idle (44x30)_1
+      213: 2540380586305310239
+    second: RightRun (84x38)_1
   - first:
-      213: -7778519746354220618
-    second: Idle (44x30)_2
+      213: -3320767183244414366
+    second: RightRun (84x38)_2
   - first:
-      213: -4610024896826334718
-    second: Idle (44x30)_3
+      213: -4841224328357532027
+    second: RightRun (84x38)_3
   - first:
-      213: -297012856949671142
-    second: Idle (44x30)_4
+      213: 7034499292254113276
+    second: RightRun (84x38)_4
   - first:
-      213: -4935324006592396102
-    second: Idle (44x30)_5
+      213: 6795926866341588338
+    second: RightRun (84x38)_5
   - first:
-      213: 4951597289470662527
-    second: Idle (44x30)_6
+      213: 4247904450115012374
+    second: RightRun (84x38)_6
   - first:
-      213: -3747086668998301680
-    second: Idle (44x30)_7
-  - first:
-      213: 2626477834240146489
-    second: Idle (44x30)_8
-  - first:
-      213: -820748739254766286
-    second: Idle (44x30)_9
+      213: -5237148209227554577
+    second: RightRun (84x38)_7
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -53,6 +47,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -61,9 +56,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -84,16 +79,20 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,7 +104,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle (44x30)_0
+      name: RightRun (84x38)_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 5
         y: 0
-        width: 44
-        height: 30
+        width: 41
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aaa5e7d91c2b91048b0395aaf519d15b
-      internalID: 4740742658319907719
+      spriteID: 55ce80ce21f94a760800000000000000
+      internalID: 7468268985705360469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (44x30)_1
+      name: RightRun (84x38)_1
       rect:
         serializedVersion: 2
-        x: 44
+        x: 87
         y: 0
-        width: 44
-        height: 30
+        width: 43
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f3cf5b7c0148d949b92ab186b9a39b5
-      internalID: -1280504103846584438
+      spriteID: f1ec6090fae314320800000000000000
+      internalID: 2540380586305310239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (44x30)_2
+      name: RightRun (84x38)_2
       rect:
         serializedVersion: 2
-        x: 88
+        x: 172
         y: 0
-        width: 44
-        height: 30
+        width: 41
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae389daeb9316e94cbf180ff8e4e9de2
-      internalID: -7778519746354220618
+      spriteID: 26231fc47d34ae1d0800000000000000
+      internalID: -3320767183244414366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (44x30)_3
+      name: RightRun (84x38)_3
       rect:
         serializedVersion: 2
-        x: 132
+        x: 257
         y: 0
-        width: 44
-        height: 30
+        width: 41
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21def49bd77c82045ad4318fe4bc8175
-      internalID: -4610024896826334718
+      spriteID: 58e254e8f1480dcb0800000000000000
+      internalID: -4841224328357532027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (44x30)_4
+      name: RightRun (84x38)_4
       rect:
         serializedVersion: 2
-        x: 176
+        x: 340
         y: 0
-        width: 44
-        height: 30
+        width: 41
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3f68eae5f8f5c242b5cb0d316947d62
-      internalID: -297012856949671142
+      spriteID: cfd0b8ff5df8f9160800000000000000
+      internalID: 7034499292254113276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (44x30)_5
+      name: RightRun (84x38)_5
       rect:
         serializedVersion: 2
-        x: 220
+        x: 424
         y: 0
-        width: 44
-        height: 30
+        width: 41
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fecb223620e4f44cb447fa7a769ac40
-      internalID: -4935324006592396102
+      spriteID: 27de2d38a7bff4e50800000000000000
+      internalID: 6795926866341588338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (44x30)_6
+      name: RightRun (84x38)_6
       rect:
         serializedVersion: 2
-        x: 264
+        x: 506
         y: 0
-        width: 44
-        height: 30
+        width: 42
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8503f41803fbe5742b4dc8aada3482e5
-      internalID: 4951597289470662527
+      spriteID: 61708ec479693fa30800000000000000
+      internalID: 4247904450115012374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (44x30)_7
+      name: RightRun (84x38)_7
       rect:
         serializedVersion: 2
-        x: 308
+        x: 591
         y: 0
-        width: 44
-        height: 30
+        width: 40
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,50 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b3554ba6671b6c4385039a7e1c35697
-      internalID: -3747086668998301680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle (44x30)_8
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 44
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b513d3585ca69ee42954e8a9d74f7f97
-      internalID: 2626477834240146489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle (44x30)_9
-      rect:
-        serializedVersion: 2
-        x: 396
-        y: 0
-        width: 44
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 036649408c856cf4ab1416f3048162c1
-      internalID: -820748739254766286
+      spriteID: fe02be88379e157b0800000000000000
+      internalID: -5237148209227554577
       vertices: []
       indices: 
       edges: []
