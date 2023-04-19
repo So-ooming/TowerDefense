@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSystem : MonoBehaviour
 {
     [SerializeField] private Wave[] waves;
     [SerializeField] private EnemySpawner enemySpawner;
     private int currentWaveIndex = -1;
+    public int CurrentWaveIndex => currentWaveIndex + 1;
+    public int maxWave => waves.Length;
+    
+
+    
 
     public void StartWave()
     {
@@ -16,6 +22,8 @@ public class WaveSystem : MonoBehaviour
             enemySpawner.StartWave(waves[currentWaveIndex]);
         }
     }
+
+    
 }
 
 [System.Serializable]

@@ -5515,6 +5515,7 @@ MonoBehaviour:
   - {fileID: 18281697}
   - {fileID: 180648840}
   playerGold: {fileID: 520896382}
+  waveViewer: {fileID: 520896383}
 --- !u!4 &335492240
 Transform:
   m_ObjectHideFlags: 0
@@ -6501,8 +6502,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPlayerHP: {fileID: 2064912847}
   textPlayerGold: {fileID: 4824337}
+  textCurrentWave: {fileID: 2031549189}
   playerHP: {fileID: 520896380}
   playerGold: {fileID: 520896382}
+  currentWave: {fileID: 335492241}
+  waveViewer: {fileID: 520896383}
 --- !u!1001 &386393007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7915,6 +7919,7 @@ GameObject:
   - component: {fileID: 520896381}
   - component: {fileID: 520896380}
   - component: {fileID: 520896382}
+  - component: {fileID: 520896383}
   m_Layer: 0
   m_Name: PlayerStatus
   m_TagString: Untagged
@@ -7963,6 +7968,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGold: 100
+--- !u!114 &520896383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520896379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6060964272ac38489a6e47925cda05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 616002895}
+  chgimage: {fileID: 0}
 --- !u!4 &522179019 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7024983632253401451, guid: 567cdcd58f0b97f44afef5bec0609743, type: 3}
@@ -8956,7 +8975,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8174430245129279795, guid: 408d6b298fd6a1f4f95ba26aa80c0685, type: 3}
+  m_Sprite: {fileID: -7861705988937960754, guid: 6c9372c8e47f48b40a495238fd5cfa70, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

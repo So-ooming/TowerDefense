@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    //[SerializeField] private GameObject enemyPrefab;
+    private GameObject enemySprite;
     [SerializeField] private GameObject enemyHPPrefab;
     //[SerializeField] private float spawnTime;
     [SerializeField] private PlayerHP playerHP;
     [SerializeField] private Transform CanvasTransfrom;
     [SerializeField] private Transform[] wayPoints;
     [SerializeField] private PlayerGold playerGold;
+    [SerializeField] private WaveViewer waveViewer;
+    
     private Wave currentWave;
 
     private List<EnemyControl> enemyList;
@@ -26,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
     {
         currentWave = wave;
         StartCoroutine("SpawnEnemy");
+        waveViewer.ImageSet(enemySprite);
     }
 
     private IEnumerator SpawnEnemy()
@@ -46,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
             spawnEnemyCount++;
 
             yield return new WaitForSeconds(currentWave.spawnTime);
- 
+
         }
     }
 
