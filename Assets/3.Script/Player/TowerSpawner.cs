@@ -9,14 +9,14 @@ public class TowerSpawner : MonoBehaviour
     [SerializeField] private int towerBuildGold = 20;
     [SerializeField] private PlayerGold playerGold;
 
-    public void SpawnTower(Transform tiletransform)
+    public void SpawnTower(Transform tileTransform)
     {
         if(towerBuildGold > playerGold.CurrentGold)
         {
             return;
         }
 
-        Tile tile = tiletransform.GetComponent<Tile>();
+        Tile tile = tileTransform.GetComponent<Tile>();
 
         if (tile.isBuildTower) return;            // 설치할 타일에 이미 타워가 있으면 return;
 
@@ -24,7 +24,9 @@ public class TowerSpawner : MonoBehaviour
 
         playerGold.CurrentGold -= towerBuildGold; // 현재 골드 - 타워 건설 비용
 
-        GameObject clone = Instantiate(towerPrefab, tiletransform.position, Quaternion.identity);
+        Vector3 position = tileTransform.position + Vector3.back;
+
+        GameObject clone = Instantiate(towerPrefab, tileTransform.position, Quaternion.identity);
         clone.GetComponent<Weapon>().Setup(enemySpawner);
     }
 }

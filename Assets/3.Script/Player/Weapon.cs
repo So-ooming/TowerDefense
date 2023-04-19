@@ -6,15 +6,21 @@ public enum WeaponState { SearchTarget = 0, AttackToTarget}
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private float attackRate;
-    [SerializeField] private float attackRange;
-    [SerializeField] private Transform spawnPoint;
-    [SerializeField] private float attackDamage = 1;
+    [SerializeField] private GameObject bulletPrefab;       // 불릿 프리팹
+    [SerializeField] private float attackRate;              // 공격 주기
+    [SerializeField] private float attackRange;             // 공격 범위
+    [SerializeField] private Transform spawnPoint;          // 스폰 포인트
+    [SerializeField] private float attackDamage = 1;        // 공격력
+    private int level = 0;                                  // 타워 레벨
     private WeaponState weaponState = WeaponState.SearchTarget;
     private Transform attackTarget = null;
     private EnemySpawner enemySpawner;
     [SerializeField] private GameObject head;
+
+    public float AttackDamage => attackDamage;
+    public float AttackRate => attackRate;
+    public float AttackRange => attackRange;
+    public int Level => level + 1;
 
     public void Setup(EnemySpawner enemySpawner)
     {

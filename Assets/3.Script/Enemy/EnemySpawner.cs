@@ -9,14 +9,17 @@ public class EnemySpawner : MonoBehaviour
     //[SerializeField] private float spawnTime;
     [SerializeField] private PlayerHP playerHP;
     [SerializeField] private Transform CanvasTransfrom;
-    [SerializeField] private Transform[] wayPoints;
-    [SerializeField] private PlayerGold playerGold;
-    [SerializeField] private WaveViewer waveViewer;
+    [SerializeField] private Transform[] wayPoints;     
+    [SerializeField] private PlayerGold playerGold;     // 플레이어의 소지금
+    [SerializeField] private WaveViewer waveViewer;     // 웨이브 뷰어 컴포넌트
     
-    private Wave currentWave;
+    private Wave currentWave;                           // 현재 웨이브 정보
+    private int currentEnemyCount;                      // 현재 웨이브의 남아있는 Enemy 개수
 
     private List<EnemyControl> enemyList;
     public List<EnemyControl> EnemyList => enemyList;
+    public int CurrentEnemyCount => currentEnemyCount;
+    public int MaxEnemyCount => currentWave.maxEnemyCount;
 
     void Awake()
     {
@@ -27,6 +30,7 @@ public class EnemySpawner : MonoBehaviour
     public void StartWave(Wave wave)
     {
         currentWave = wave;
+        currentEnemyCount = currentWave.maxEnemyCount;
         StartCoroutine("SpawnEnemy");
         waveViewer.ImageSet(enemySprite);
     }
@@ -66,6 +70,7 @@ public class EnemySpawner : MonoBehaviour
             playerGold.CurrentGold += gold;
         }
 
+        currentEnemyCount--;
         // 리스트에서 사망한 enemy 정보 삭제
         enemyList.Remove(enemy);
 
