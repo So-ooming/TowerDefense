@@ -17,6 +17,14 @@ public class Weapon : MonoBehaviour
     private EnemySpawner enemySpawner;
     [SerializeField] private GameObject head;
 
+    private float improvedDamage = 0f;
+    private float improvedRate = 0f;
+    private float improvedRange = 0f;
+
+    public float ImprovedDamage => improvedDamage;          // 향상된 데미지
+    public float ImprovedRate => improvedRate;              // 향상된 공격 주기
+    public float ImprovedRange => improvedRange;            // 향상된 공격 범위
+
     public float AttackDamage => attackDamage;
     public float AttackRate => attackRate;
     public float AttackRange => attackRange;
@@ -114,4 +122,18 @@ public class Weapon : MonoBehaviour
         clone.GetComponent<BulletControl>().Setup(attackTarget, attackDamage);
     }
     
+    public void UpgradeTower(Weapon currentTower)
+    {
+        currentTower.level += 1;
+        currentTower.improvedDamage += 2;
+        currentTower.improvedRange += 0.02f;
+
+        currentTower.attackDamage += 2;
+        if (!(currentTower.attackRate - 0.005f <= 0.3f))
+        {
+            currentTower.improvedRate -= 0.005f;
+            currentTower.attackRate -= 0.005f;
+        }
+        currentTower.attackRange += 0.02f;
+    }
 }

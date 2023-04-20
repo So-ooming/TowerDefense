@@ -8,6 +8,8 @@ public class TowerSpawner : MonoBehaviour
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private int towerBuildGold = 20;
     [SerializeField] private PlayerGold playerGold;
+    
+    public int TowerBuildGold => towerBuildGold;
 
     public void SpawnTower(Transform tileTransform)
     {
@@ -24,9 +26,15 @@ public class TowerSpawner : MonoBehaviour
 
         playerGold.CurrentGold -= towerBuildGold; // 현재 골드 - 타워 건설 비용
 
-        Vector3 position = tileTransform.position + Vector3.back;
+        //Vector3 position = tileTransform.position + Vector3.back;
 
         GameObject clone = Instantiate(towerPrefab, tileTransform.position, Quaternion.identity);
         clone.GetComponent<Weapon>().Setup(enemySpawner);
+    }
+
+    public void IsBuildSetFalse()
+    {
+        Tile tile = GetComponent<Tile>();
+        tile.isBuildTower = false;
     }
 }
