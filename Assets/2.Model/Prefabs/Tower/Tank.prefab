@@ -129,10 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4346147788047832771, guid: 95150c83f6f00df4d8a8b2ede8d4df3f, type: 3}
-  attackRate: 0.5
-  attackRange: 4
+  towerTemplate: {fileID: 11400000, guid: 904fe406488effe4391156c4cd5182e7, type: 2}
   spawnPoint: {fileID: 4287612615907689291}
-  attackDamage: 1
   head: {fileID: 9217886689124037265}
 --- !u!65 &3006398519122009334
 BoxCollider:
@@ -159,7 +157,7 @@ GameObject:
   - component: {fileID: 1602066992976764886}
   m_Layer: 0
   m_Name: Tank_Body
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -241,7 +239,7 @@ GameObject:
   - component: {fileID: 1433404271794999232}
   m_Layer: 0
   m_Name: Tank_Head
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

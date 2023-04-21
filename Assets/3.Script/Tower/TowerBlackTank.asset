@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbcc2108e30c3640a2d651023d3b81d, type: 3}
+  m_Name: TowerBlackTank
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 4155794015800791516, guid: 6e549974c52ae4342aa9f13e7c34c953, type: 3}
+  followTowerPrefab: {fileID: 1799712811688493485, guid: 6397d2f935c41534999ce79c8786cc1a, type: 3}
+  weapon:
+  - sprite: {fileID: 21300000, guid: 5e2921fb82a747b4380beb6bf1df5d46, type: 3}
+    damage: 1
+    rate: 0.5
+    range: 4
+    cost: 20

@@ -7,14 +7,16 @@ public enum WeaponState { SearchTarget = 0, AttackToTarget}
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;       // 불릿 프리팹
-    [SerializeField] private float attackRate;              // 공격 주기
+    [SerializeField] private TowerTemplate towerTemplate;       // 불릿 프리팹
+    /*[SerializeField] private float attackRate;              // 공격 주기
     [SerializeField] private float attackRange;             // 공격 범위
-    [SerializeField] private Transform spawnPoint;          // 스폰 포인트
-    [SerializeField] private float attackDamage = 1;        // 공격력
+    [SerializeField] private float attackDamage = 1;*/        // 공격력
     private int level = 0;                                  // 타워 레벨
+    [SerializeField] private Transform spawnPoint;          // 스폰 포인트
     private WeaponState weaponState = WeaponState.SearchTarget;
     private Transform attackTarget = null;
     private EnemySpawner enemySpawner;
+    private Tile ownerTile;
     [SerializeField] private GameObject head;
 
     private float improvedDamage = 0f;
@@ -25,16 +27,28 @@ public class Weapon : MonoBehaviour
     public float ImprovedRate => improvedRate;              // 향상된 공격 주기
     public float ImprovedRange => improvedRange;            // 향상된 공격 범위
 
-    public float AttackDamage => attackDamage;
+    /*public float AttackDamage => attackDamage;
     public float AttackRate => attackRate;
-    public float AttackRange => attackRange;
+    public float AttackRange => attackRange;*/
+    public Sprite TowerSprite => towerTemplate.weapon[0].sprite;
+    public float AttackRate => towerTemplate.weapon[0].rate;
+    public float AttackRange => towerTemplate.weapon[0].range;
+    public float AttackDamage => towerTemplate.weapon[0].damage;
     public int Level => level + 1;
 
-    public void Setup(EnemySpawner enemySpawner)
+    public void Setup(EnemySpawner enemySpawner, Tile ownerTile)
     {
         this.enemySpawner = enemySpawner;
-
+        this.ownerTile = ownerTile;
+        SetupTower();
         ChangeState(WeaponState.SearchTarget);
+    }
+
+    public void SetupTower()
+    {
+        towerTemplate.weapon[0].damage = 1f;
+        towerTemplate.weapon[0].rate = 0.5f;
+        towerTemplate.weapon[0].range = 4f;
     }
 
     public void ChangeState(WeaponState newState)
@@ -73,7 +87,7 @@ public class Weapon : MonoBehaviour
             {
                 float distance = Vector3.Distance(enemySpawner.EnemyList[i].transform.position, transform.position);
                 // 현재 검사 중인 적과의 거리가 공격 범위 내에 있고, 현재까지 검사한 적보다 거리가 가까우면
-                if (distance <= attackRange && distance <= closestDistSqr)
+                if (distance <= AttackRange && distance <= closestDistSqr)
                 {
                     closestDistSqr = distance;
                     attackTarget = enemySpawner.EnemyList[i].transform;
@@ -102,7 +116,7 @@ public class Weapon : MonoBehaviour
 
             // target이 공격 범위 안에 있는지 검사 (공격 범위를 벗어나면 새로운 적 탐색)
             float distance = Vector3.Distance(attackTarget.position, transform.position);
-            if(distance > attackRange)
+            if(distance > AttackRange)
             {
                 attackTarget = null;
                 ChangeState(WeaponState.SearchTarget);
@@ -110,7 +124,7 @@ public class Weapon : MonoBehaviour
             }
 
             // Attack_Rate 시간만큼 대기
-            yield return new WaitForSeconds(attackRate);
+            yield return new WaitForSeconds(AttackRate);
 
             Fire();
         }
@@ -119,7 +133,7 @@ public class Weapon : MonoBehaviour
     private void Fire()
     {
         GameObject clone = Instantiate(bulletPrefab, spawnPoint.position, head.transform.rotation);
-        clone.GetComponent<BulletControl>().Setup(attackTarget, attackDamage);
+        clone.GetComponent<BulletControl>().Setup(attackTarget, AttackDamage);
     }
     
     public void UpgradeTower(Weapon currentTower)
@@ -128,12 +142,17 @@ public class Weapon : MonoBehaviour
         currentTower.improvedDamage += 2;
         currentTower.improvedRange += 0.02f;
 
-        currentTower.attackDamage += 2;
-        if (!(currentTower.attackRate - 0.005f <= 0.3f))
+        currentTower.towerTemplate.weapon[0].damage += 2;
+        if (!(currentTower.AttackRate - 0.005f <= 0.3f))
         {
             currentTower.improvedRate -= 0.005f;
-            currentTower.attackRate -= 0.005f;
+            currentTower.towerTemplate.weapon[0].rate -= 0.005f;
         }
-        currentTower.attackRange += 0.02f;
+        currentTower.towerTemplate.weapon[0].range += 0.02f;
+    }
+
+    public void IsBuildSetFalse()
+    {
+        ownerTile.isBuildTower = false;
     }
 }

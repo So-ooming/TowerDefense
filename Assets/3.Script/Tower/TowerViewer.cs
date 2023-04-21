@@ -18,16 +18,17 @@ public class TowerViewer : MonoBehaviour
     [SerializeField] private TowerAttackRange towerAttackRange;
     [SerializeField] private TowerSpawner towerSpawner;
     [SerializeField] private PlayerGold playerGold;
+    [SerializeField] private ObjectDetector objectDetector;
     private Tile tile;
 
     private int upgradeCost;
     private int sellCost;
 
     private Weapon currentTower;
-    private void Awake()
+    /*private void Awake()
     {
         OffPanel();
-    }
+    }*/
 
     private void Update()
     {
@@ -58,7 +59,7 @@ public class TowerViewer : MonoBehaviour
     public void SellTower()
     {
         playerGold.CurrentGold += currentTower.Level * sellCost;
-        towerSpawner.IsBuildSetFalse(currentTower.transform);
+        currentTower.IsBuildSetFalse();
         Destroy(currentTower.gameObject);
         OffPanel();
     }
@@ -71,6 +72,7 @@ public class TowerViewer : MonoBehaviour
 
     public void UpdateTowerData()
     {
+        image.sprite = currentTower.TowerSprite;
         textDamage.text = "Damage : " + (currentTower.AttackDamage);
         textRate.text = "Rate       : " + (currentTower.AttackRate).ToString("F2");
         textRange.text = "Range    : " + (currentTower.AttackRange).ToString("F2");
