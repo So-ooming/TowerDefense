@@ -72,9 +72,9 @@ public class TowerViewer : MonoBehaviour
 
     public void UpdateTowerData()
     {
-        image.sprite = currentTower.TowerSprite;
+        //image.sprite = currentTower.towerTemplate.TowerSprite;
         textDamage.text = "Damage : " + (currentTower.AttackDamage);
-        textRate.text = "Rate       : " + (currentTower.AttackRate).ToString("F2");
+        textRate.text = "Rate       : " + (currentTower.AttackRate).ToString("F3");
         textRange.text = "Range    : " + (currentTower.AttackRange).ToString("F2");
         textLevel.text = "Lv. " + currentTower.Level;
         textUpgradeCost.text = (currentTower.Level * (int)upgradeCost).ToString() + " $";

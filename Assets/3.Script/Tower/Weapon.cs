@@ -8,9 +8,9 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;       // 불릿 프리팹
     [SerializeField] private TowerTemplate towerTemplate;       // 불릿 프리팹
-    /*[SerializeField] private float attackRate;              // 공격 주기
+    [SerializeField] private float attackRate;              // 공격 주기
     [SerializeField] private float attackRange;             // 공격 범위
-    [SerializeField] private float attackDamage = 1;*/        // 공격력
+    [SerializeField] private float attackDamage = 1;        // 공격력
     private int level = 0;                                  // 타워 레벨
     [SerializeField] private Transform spawnPoint;          // 스폰 포인트
     private WeaponState weaponState = WeaponState.SearchTarget;
@@ -27,13 +27,11 @@ public class Weapon : MonoBehaviour
     public float ImprovedRate => improvedRate;              // 향상된 공격 주기
     public float ImprovedRange => improvedRange;            // 향상된 공격 범위
 
-    /*public float AttackDamage => attackDamage;
+    public float AttackDamage => attackDamage;
     public float AttackRate => attackRate;
-    public float AttackRange => attackRange;*/
-    public Sprite TowerSprite => towerTemplate.weapon[0].sprite;
-    public float AttackRate => towerTemplate.weapon[0].rate;
-    public float AttackRange => towerTemplate.weapon[0].range;
-    public float AttackDamage => towerTemplate.weapon[0].damage;
+    public float AttackRange => attackRange;
+
+
     public int Level => level + 1;
 
     public void Setup(EnemySpawner enemySpawner, Tile ownerTile)
@@ -46,10 +44,11 @@ public class Weapon : MonoBehaviour
 
     public void SetupTower()
     {
-        towerTemplate.weapon[0].damage = 1f;
-        towerTemplate.weapon[0].rate = 0.5f;
-        towerTemplate.weapon[0].range = 4f;
-    }
+    Sprite TowerSprite = towerTemplate.weapon[0].sprite;
+    attackRate = towerTemplate.weapon[0].rate;
+    attackRange = towerTemplate.weapon[0].range;
+    attackDamage = towerTemplate.weapon[0].damage;
+}
 
     public void ChangeState(WeaponState newState)
     {
@@ -142,13 +141,13 @@ public class Weapon : MonoBehaviour
         currentTower.improvedDamage += 2;
         currentTower.improvedRange += 0.02f;
 
-        currentTower.towerTemplate.weapon[0].damage += 2;
+        currentTower.attackDamage += 2;
         if (!(currentTower.AttackRate - 0.005f <= 0.3f))
         {
             currentTower.improvedRate -= 0.005f;
-            currentTower.towerTemplate.weapon[0].rate -= 0.005f;
+            currentTower.attackRate -= 0.005f;
         }
-        currentTower.towerTemplate.weapon[0].range += 0.02f;
+        currentTower.attackRange += 0.02f;
     }
 
     public void IsBuildSetFalse()
