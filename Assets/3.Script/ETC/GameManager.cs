@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
-    AudioSource audio;
+    public bool isGameOver;
     private void Awake()
     {
         if (Instance == null)
@@ -18,11 +18,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("이미 게임 매니저가 존재합니다.");
             Destroy(gameObject);
         }
-        audio = transform.GetComponent<AudioSource>();
     }
 
-    private void Start()
-    {
-        audio.Play();
-    }
 }
